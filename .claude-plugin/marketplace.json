@@ -1,0 +1,14 @@
+{
+  "name": "pre-review-marketplace",
+  "owner": {
+    "name": "Markus"
+  },
+  "plugins": [
+    {
+      "name": "pre-review-skill",
+      "source": "../",
+      "description": "Pre-commit code review using 6 specialized agents that find AND fix issues before publishing PRs",
+      "version": "1.0.0"
+    }
+  ]
+}
