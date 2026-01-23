@@ -6,7 +6,7 @@
   "plugins": [
     {
       "name": "pre-review-skill",
-      "source": "../",
+      "source": "./plugins/pre-review",
       "description": "Pre-commit code review using 6 specialized agents that find AND fix issues before publishing PRs",
       "version": "1.0.0"
     }
