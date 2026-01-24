@@ -10,11 +10,15 @@ Analyze the current branch changes compared to main/master and **fix issues dire
 
 Follow these steps precisely:
 
+### Step 0: Initialize Progress Tracking
+
+Create a todo list to track progress through all steps. This provides visibility to the user as the review progresses.
+
 ### Step 1: Eligibility Check (Haiku Agent)
 
 Use a Haiku agent to check:
 - Is there a branch with uncommitted or committed changes compared to main/master?
-- Are there actual code changes to review (not just config/docs)?
+- Are there actual code changes to review? (Config/docs-only changes don't need pre-review - inform user and stop)
 
 If no meaningful changes exist, inform the user and stop.
 
@@ -85,11 +89,10 @@ Check for:
 
 For each issue found in Step 4, launch a parallel Haiku agent to score confidence (0-100):
 
-- **0:** False positive, doesn't stand up to scrutiny, or pre-existing issue
-- **25:** Might be real, but could be false positive. Stylistic issue not in guidelines.
-- **50:** Real issue but minor/nitpick. Not very important relative to the PR.
-- **75:** Verified real issue. Will impact functionality. Directly mentioned in guidelines.
-- **100:** Definitely real, will happen frequently. Evidence directly confirms.
+- **90-100:** Critical bug or security issue. Clear evidence. Must fix.
+- **70-89:** Real bug that will cause problems. Should fix.
+- **50-69:** Code smell or potential issue. Consider fixing.
+- **Below 50:** Minor, stylistic, or likely false positive. Skip.
 
 Filter out issues scoring below 70.
 
@@ -114,7 +117,7 @@ After fixing, provide a summary to the user:
 
 1. **[file:line]** - Brief description of issue
    - Severity: critical/important/minor
-   - Category: bug/security/performance/style/guidelines
+   - Category: security/bug/performance/quality/guidelines
    - Fix applied: Brief description of fix
 
 2. ...
@@ -162,6 +165,6 @@ Ask the user:
 ## Notes
 
 - Use `git diff main...HEAD` to see changes (or master if no main)
-- Create a todo list to track progress through the agents
+- Update todo list as you complete each step
 - If no issues found, congratulate the user on clean code
 - Always show what was fixed so user can verify

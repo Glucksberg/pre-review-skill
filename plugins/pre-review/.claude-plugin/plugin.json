@@ -1,12 +1,12 @@
 {
   "name": "pre-review-skill",
-  "description": "Pre-commit code review using 6 specialized agents that find AND fix issues before publishing PRs",
-  "version": "1.0.0",
+  "description": "Code review and audit using specialized agents that find AND fix issues",
+  "version": "1.1.0",
   "author": {
-    "name": "Markus",
-    "email": ""
+    "name": "Markus"
   },
-  "homepage": "https://github.com/markus/pre-review-skill",
-  "keywords": ["code-review", "pre-commit", "agents", "fix", "quality"],
+  "repository": "https://github.com/yourusername/pre-review-skill",
+  "homepage": "https://github.com/yourusername/pre-review-skill",
+  "keywords": ["code-review", "pre-commit", "audit", "agents", "fix", "quality", "security"],
   "license": "MIT"
 }
