@@ -1,6 +1,6 @@
 ---
 name: pr-review
-description: Find and fix code issues before publishing a PR. Single-pass Opus review with auto-fix. Use when reviewing code changes before submission or auditing existing code for bugs/security. Don't use when running a coding agent to write code (use coding-agent) or checking GitHub CI status (use github).
+description: Find and fix code issues before publishing a PR. Single-pass review with auto-fix. Use when reviewing code changes before submission or auditing existing code for bugs/security. Don't use when running a coding agent to write code (use coding-agent) or checking GitHub CI status (use github).
 metadata: {"openclaw": {"requires": {"bins": ["git"]}}}
 ---
 
